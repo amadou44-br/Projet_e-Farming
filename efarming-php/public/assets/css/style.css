@@ -1,0 +1,234 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: #f4f6f5;
+    color: #222;
+}
+
+/* --- Barre de navigation --- */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #2e7d32;
+    color: white;
+    padding: 15px 30px;
+    flex-wrap: wrap;
+}
+
+.navbar .logo {
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.navbar nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 12px;
+    font-weight: 500;
+}
+
+.navbar nav a:hover {
+    text-decoration: underline;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.btn-deconnexion {
+    background-color: #c62828;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 4px;
+    text-decoration: none;
+}
+
+/* --- Contenu principal --- */
+.contenu {
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: #2e7d32;
+}
+
+h2 {
+    margin-top: 30px;
+    margin-bottom: 15px;
+    color: #33691e;
+}
+
+/* --- Boutons --- */
+.btn-principal {
+    display: inline-block;
+    background-color: #2e7d32;
+    color: white;
+    padding: 10px 18px;
+    border-radius: 6px;
+    text-decoration: none;
+    margin-bottom: 20px;
+}
+
+.btn-principal:hover {
+    background-color: #276e2b;
+}
+
+button {
+    background-color: #2e7d32;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #276e2b;
+}
+
+/* --- Formulaires --- */
+.formulaire, .carte-formulaire {
+    background: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+    max-width: 450px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.page-auth {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #eef2ee;
+}
+
+label {
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+input, select, textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.message-erreur {
+    background-color: #ffebee;
+    color: #c62828;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+/* --- Tableaux --- */
+.tableau-donnees {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+}
+
+.tableau-donnees th, .tableau-donnees td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+.tableau-donnees th {
+    background-color: #2e7d32;
+    color: white;
+}
+
+.actions a {
+    margin-right: 10px;
+    color: #2e7d32;
+    text-decoration: none;
+}
+
+.actions a:hover {
+    text-decoration: underline;
+}
+
+/* --- Badges de statut --- */
+.badge {
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 0.85rem;
+    color: white;
+}
+
+.badge-actif { background-color: #43a047; }
+.badge-vendu { background-color: #1565c0; }
+.badge-décédé { background-color: #616161; }
+
+/* --- Détails --- */
+.carte-details {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+
+.carte-details p {
+    margin-bottom: 8px;
+}
+
+/* --- Dashboard --- */
+.grille-stats {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+.carte-stat {
+    background: white;
+    padding: 20px 30px;
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+    text-align: center;
+    flex: 1;
+    min-width: 150px;
+}
+
+.carte-stat h3 {
+    font-size: 2rem;
+    color: #2e7d32;
+}
+
+.liste-rappels {
+    list-style: none;
+    background: white;
+    padding: 15px 20px;
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+}
+
+.liste-rappels li {
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.liste-rappels li:last-child {
+    border-bottom: none;
+}
