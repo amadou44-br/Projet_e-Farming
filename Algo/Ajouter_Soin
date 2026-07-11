@@ -1,0 +1,24 @@
+ALGORITHME ajouterSoin
+DÉBUT
+    SI animalService.compterTotal() = 0 ALORS
+        Afficher "Aucun animal enregistré, ajoute d'abord un animal"
+        RETOURNER
+    FIN SI
+
+    animalId ← Saisie.lireEntier("ID de l'animal concerné : ")
+
+    SI animalService.trouverParId(animalId) est absent ALORS
+        Afficher "Aucun animal trouvé avec cet ID"
+        RETOURNER
+    FIN SI
+
+    type ← choisirTypeSoin()                    
+    description ← Saisie.lireTexte("Description : ")
+    dateEvenement ← Saisie.lireDate("Date de l'événement")
+    dateRappel ← Saisie.lireDateOptionnelle("Date de rappel")
+
+    soin ← NOUVEL HealthRecord(animalId, type, description, dateEvenement, dateRappel)
+    healthService.ajouter(soin)
+
+    Afficher "Soin enregistré : " + soin.toString()
+FIN

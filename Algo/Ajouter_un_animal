@@ -1,0 +1,25 @@
+ALGORITHME ajouterAnimal
+DÉBUT
+    Afficher "Ajouter un animal"
+
+    identifiantValide ← FAUX
+    FAIRE 
+        identifiant ← Saisie.lireTexteObligatoire("Identifiant : ")
+        SI animalService.identifiantExiste(identifiant) ALORS
+            ECRIRE "Cet identifiant existe déjà"
+        SINON
+            identifiantValide ← VRAI
+        FIN SI
+    TANTQUE(identifiantValide = FAUX)
+
+    espece ← Saisie.lireTexteObligatoire("Espèce : ")
+    race ← Saisie.lireTexte("Race : ")
+    sexe ← choisirSexe()                       
+    dateNaissance ← Saisie.lireDateOptionnelle("Date de naissance")
+
+    animal ← NOUVEL Animal(identifiant, espece, race, sexe, dateNaissance)
+
+    animalService.ajouter(animal)
+
+    Afficher "Animal ajouté : " + animal.toString()
+FIN

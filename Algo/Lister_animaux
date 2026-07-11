@@ -1,0 +1,12 @@
+ALGORITHME listerAnimaux
+DÉBUT
+    animaux ← animalService.listerTous()        
+
+    SI animaux est vide ALORS
+        Afficher "Aucun animal enregistré"
+    SINON
+        POUR CHAQUE animal DANS animaux FAIRE
+            Afficher animal.toString()           
+        FIN POUR
+    FIN SI
+FIN

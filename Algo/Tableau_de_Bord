@@ -1,0 +1,19 @@
+ALGORITHME afficherTableauDeBord
+DÉBUT
+    nbAnimaux   ← animalService.compterTotal()
+    nbVentes    ← saleService.compterTotal()
+    totalVentes ← saleService.totalVentes()
+    rappels     ← healthService.rappelsAVenir()
+
+    Afficher "Animaux enregistrés : " + nbAnimaux
+    Afficher "Ventes réalisées : "     + nbVentes
+    Afficher "Total des ventes : "     + totalVentes + " €"
+
+    SI rappels est vide ALORS
+        Afficher "Aucun rappel à venir"
+    SINON
+        POUR CHAQUE rappel DANS rappels FAIRE
+            Afficher rappel.toString()
+        FIN POUR
+    FIN SI
+FIN

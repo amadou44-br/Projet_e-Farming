@@ -1,0 +1,30 @@
+ALGORITHME enregistrerVente
+DÉBUT
+    disponibles ← animalService.listerActifs()   
+
+    SI disponibles est vide ALORS
+        Afficher "Aucun animal disponible à la vente"
+        RETOURNER
+    FIN SI
+
+    Afficher disponibles
+
+    animalId ← Saisie.lireEntier("ID de l'animal à vendre : ")
+    animal ← animalService.trouverParId(animalId)
+
+    SI animal est absent OU animal.statut ≠ ACTIF ALORS
+        Afficher "Cet animal n'est pas disponible à la vente"
+        RETOURNER
+    FIN SI
+
+    acheteur ← Saisie.lireTexteObligatoire("Nom de l'acheteur : ")
+    prix ← Saisie.lireDecimal("Prix de vente : ")
+    dateVente ← Saisie.lireDate("Date de la vente")
+
+    vente ← NOUVEL Sale(animalId, acheteur, prix, dateVente)
+    saleService.ajouter(vente)
+
+    animalService.marquerCommeVendu(animalId)
+
+    Afficher "Vente enregistrée : " + vente.toString()
+FIN

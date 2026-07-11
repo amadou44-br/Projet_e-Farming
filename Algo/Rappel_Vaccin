@@ -1,0 +1,15 @@
+ALGORITHME rappelsAVenir (méthode de HealthService)
+DÉBUT
+    aujourdHui ← dateDuJour()
+    résultat ← liste vide
+
+    POUR CHAQUE soin DANS this.soins FAIRE
+        SI soin.dateRappel n'est pas null ET soin.dateRappel >= aujourdHui ALORS
+            Ajouter soin À résultat
+        FIN SI
+    FIN POUR
+
+    Trier résultat PAR dateRappel CROISSANT
+
+    RETOURNER résultat
+FIN
